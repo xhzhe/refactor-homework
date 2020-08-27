@@ -19,7 +19,7 @@ const ME_NH = [
     'NH',
 ];
 
-function rushDeliveryDate(anOrder) {
+function generateRushTime(anOrder) {
     let deliveryTime;
     if (MA_CT.includes(anOrder.deliveryState)) {
         deliveryTime = 1;
@@ -28,10 +28,14 @@ function rushDeliveryDate(anOrder) {
     } else {
         deliveryTime = 3;
     }
-    return anOrder.placedOn.plusDays(1 + deliveryTime);
+    return deliveryTime;
 }
 
-function defaultDeliveryDate(anOrder) {
+function rushDeliveryDate(anOrder) {
+    return anOrder.placedOn.plusDays(1 + generateRushTime(anOrder));
+}
+
+function generateDefaultTime(anOrder) {
     let deliveryTime;
     if (MA_CT_NY.includes(anOrder.deliveryState)) {
         deliveryTime = 2;
@@ -40,7 +44,11 @@ function defaultDeliveryDate(anOrder) {
     } else {
         deliveryTime = 4;
     }
-    return anOrder.placedOn.plusDays(2 + deliveryTime);
+    return deliveryTime;
+}
+
+function defaultDeliveryDate(anOrder) {
+    return anOrder.placedOn.plusDays(2 + generateDefaultTime(anOrder));
 }
 
 function deliveryDate(anOrder, isRush) {
@@ -50,4 +58,5 @@ function deliveryDate(anOrder, isRush) {
         return defaultDeliveryDate(anOrder);
     }
 }
+
 module.exports = {deliveryDate}
