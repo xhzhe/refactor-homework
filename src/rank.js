@@ -16,7 +16,7 @@ function voyageRisk(voyage) {
 }
 
 function hasChina(history) {
-    return history.some(v => 'china' === v.zone);
+    return history.some(v => china === v.zone);
 }
 
 function captainHistoryRisk(voyage, history) {
