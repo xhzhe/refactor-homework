@@ -1,4 +1,5 @@
 const rankTest = require('ava');
+const {rating} = require("../src/rank");
 const {voyageProfitFactor} = require("../src/rank");
 const {captainHistoryRisk} = require("../src/rank");
 const {voyageRisk} = require("../src/rank");
@@ -65,4 +66,15 @@ rankTest('test voyageProfitFactor', t => {
         length: 10,
         zone: 'china'
     }, history), 6)
+})
+
+rankTest('test rating', t => {
+    t.is(rating({
+        length: 10,
+        zone: 'china'
+    }, history), 'A')
+})
+
+rankTest('test rating', t => {
+    t.is(rating(voyage, history), 'B')
 })
