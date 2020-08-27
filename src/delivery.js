@@ -52,11 +52,7 @@ function defaultDeliveryDate(anOrder) {
 }
 
 function deliveryDate(anOrder, isRush) {
-    if (isRush) {
-        return rushDeliveryDate(anOrder);
-    } else {
-        return defaultDeliveryDate(anOrder);
-    }
+    return isRush ? rushDeliveryDate(anOrder) : defaultDeliveryDate(anOrder);
 }
 
 module.exports = {deliveryDate}
