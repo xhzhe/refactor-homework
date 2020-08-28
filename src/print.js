@@ -12,7 +12,7 @@ function printOwing(invoice) {
 
     result += `name: ${invoice.customer}\n`;
     result += `amount: ${outstanding}\n`;
-    result += `date: ${invoice.dueDate.toLocaleDateString()}`;
+    result += `date: ${invoice.dueDate.toLocaleDateString()}\n`;
     return result;
 }
 module.exports = printOwing
