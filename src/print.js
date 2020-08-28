@@ -7,11 +7,7 @@ function generateOwes(invoice, outstanding) {
 }
 
 function printOwing(invoice) {
-    let outstanding = 0;
-    // calculate outstanding
-    for (const o of invoice.borderSpacing) {
-        outstanding += o.amount;
-    }
+    let outstanding = invoice.borderSpacing.reduce((pre, cur) => pre + cur.amount, 0)
     // record due date
     const today = new Date();
     invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
