@@ -22,7 +22,8 @@ const ME_NH = [
 function generateRushTime(anOrder) {
     if (MA_CT.includes(anOrder.deliveryState)) {
         return 1
-    } else if (NY_NH.includes(anOrder.deliveryState)) {
+    }
+    if (NY_NH.includes(anOrder.deliveryState)) {
         return 2
     }
     return 3
@@ -35,7 +36,8 @@ function rushDeliveryDate(anOrder) {
 function generateDefaultTime(anOrder) {
     if (MA_CT_NY.includes(anOrder.deliveryState)) {
         return 2
-    } else if (ME_NH.includes(anOrder.deliveryState)) {
+    }
+    if (ME_NH.includes(anOrder.deliveryState)) {
         return 3
     }
     return 4
