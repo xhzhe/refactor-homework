@@ -47,8 +47,8 @@ function defaultDeliveryDate(anOrder) {
     return anOrder.placedOn.plusDays(2 + generateDefaultTime(anOrder));
 }
 
-function deliveryDate(anOrder, isRush) {
-    return isRush ? rushDeliveryDate(anOrder) : defaultDeliveryDate(anOrder);
+function deliveryDate(anOrder) {
+    return anOrder.isRush ? rushDeliveryDate(anOrder) : defaultDeliveryDate(anOrder);
 }
 
 module.exports = {deliveryDate}

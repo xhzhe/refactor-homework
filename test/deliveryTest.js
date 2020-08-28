@@ -9,9 +9,10 @@ test('test deliveryDate', t => {
             plusDays: (param) => {
                 return param;
             }
-        }
+        },
+        isRush: true
     };
-    t.is(4, deliveryDate(anOrder, true))
+    t.is(4, deliveryDate(anOrder))
 })
 
 test('test deliveryDate', t => {
@@ -21,9 +22,10 @@ test('test deliveryDate', t => {
             plusDays: (param) => {
                 return param;
             }
-        }
+        },
+        isRush: true
     };
-    t.is(2, deliveryDate(anOrder, true))
+    t.is(2, deliveryDate(anOrder))
 })
 
 test('test deliveryDate', t => {
@@ -33,9 +35,10 @@ test('test deliveryDate', t => {
             plusDays: (param) => {
                 return param;
             }
-        }
+        },
+        isRush: false
     };
-    t.is(6, deliveryDate(anOrder, false))
+    t.is(6, deliveryDate(anOrder))
 })
 
 test('test deliveryDate', t => {
@@ -45,9 +48,10 @@ test('test deliveryDate', t => {
             plusDays: (param) => {
                 return param;
             }
-        }
+        },
+        isRush: true
     };
-    t.is(3, deliveryDate(anOrder, true))
+    t.is(3, deliveryDate(anOrder))
 })
 
 test('test deliveryDate', t => {
@@ -57,9 +61,10 @@ test('test deliveryDate', t => {
             plusDays: (param) => {
                 return param;
             }
-        }
+        },
+        isRush: false
     };
-    t.is(4, deliveryDate(anOrder, false))
+    t.is(4, deliveryDate(anOrder))
 })
 
 test('test deliveryDate', t => {
@@ -69,9 +74,10 @@ test('test deliveryDate', t => {
             plusDays: (param) => {
                 return param;
             }
-        }
+        },
+        isRush: false
     };
-    t.is(5, deliveryDate(anOrder, false))
+    t.is(5, deliveryDate(anOrder))
 })
 
 test('test deliveryDate', t => {
@@ -81,7 +87,8 @@ test('test deliveryDate', t => {
             plusDays: (param) => {
                 return param;
             }
-        }
+        },
+        isRush: false
     };
-    t.is(6, deliveryDate(anOrder, false))
+    t.is(6, deliveryDate(anOrder))
 })
